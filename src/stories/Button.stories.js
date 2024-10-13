@@ -1,6 +1,6 @@
 import { Button } from "./Button";
 
-import { fn } from "@storybook/test";
+import { fn, userEvent, within, expect } from "@storybook/test";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 export default {
@@ -25,6 +25,12 @@ export const Primary = {
   args: {
     primary: true,
     label: "Button",
+  },
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+
+    userEvent.click(canvas.getByRole("button", { name: "Button" }));
+    expect(args.onClick).toBeCalled();
   },
 };
 
