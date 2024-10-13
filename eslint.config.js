@@ -3,6 +3,10 @@ import globals from "globals";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
+import { fixupConfigRules } from "@eslint/compat";
+import { FlatCompat } from "@eslint/eslintrc";
+
+const flatCompat = new FlatCompat();
 
 export default [
   { ignores: ["dist"] },
@@ -35,4 +39,5 @@ export default [
       ],
     },
   },
+  ...fixupConfigRules(flatCompat.extends("plugin:storybook/recommended")),
 ];
