@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  eslint-plugin-storybook:
+    hash: cfmyfbvio44zvwshkt6rf6axbe
+    path: patches/eslint-plugin-storybook.patch
+
 importers:
 
   .:
@@ -74,7 +79,7 @@ importers:
         version: 0.4.12(eslint@9.12.0)
       eslint-plugin-storybook:
         specifier: ^0.9.0
-        version: 0.9.0(eslint@9.12.0)(typescript@5.6.3)
+        version: 0.9.0(patch_hash=cfmyfbvio44zvwshkt6rf6axbe)(eslint@9.12.0)(typescript@5.6.3)
       globals:
         specifier: ^15.9.0
         version: 15.11.0
@@ -3937,7 +3942,7 @@ snapshots:
       string.prototype.matchall: 4.0.11
       string.prototype.repeat: 1.0.0
 
-  eslint-plugin-storybook@0.9.0(eslint@9.12.0)(typescript@5.6.3):
+  eslint-plugin-storybook@0.9.0(patch_hash=cfmyfbvio44zvwshkt6rf6axbe)(eslint@9.12.0)(typescript@5.6.3):
     dependencies:
       '@storybook/csf': 0.0.1
       '@typescript-eslint/utils': 5.62.0(eslint@9.12.0)(typescript@5.6.3)
